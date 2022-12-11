@@ -7,7 +7,7 @@ const App = () => {
             Hello
         </h1>
         <p>
-            Hello
+            Hello Github
         </p>
     </div>
   )
