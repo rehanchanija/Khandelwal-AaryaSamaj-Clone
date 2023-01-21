@@ -1,16 +1,20 @@
 import React from 'react'
+import Navbar from './components/Navbar'
+import Main from './components/Main'
+
 
 const App = () => {
   return (
     <div>
-        <h1 className='text-2xl text-red-500'>
-            Hello
-        </h1>
-        <p>
-            Hello Github
-        </p>
+
+        
+        <Navbar/>
+        <Main/>
+        
+       
     </div>
+    
   )
 }
-
+ 
 export default App
