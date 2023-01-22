@@ -1,6 +1,7 @@
 
 import { Button, Drawer } from 'antd';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -16,15 +17,15 @@ const Navbar = () => {
                 <img src="/logo.png" className='  w-auto sm:h-[5rem] sm:mx-auto'  />
             </div>      
             
-            <div className=' text-2xl '>
+            <div className=' text-xl flex justify-center'>
 
 <ul className='md:flex hidden md:items-center mx-4 md:font-base   '>
     <a href='#'> 
         <li className='px-3 py-4   hover:text-[#0891b2] cursor-pointer '>Home</li>
     </a>
-    <a href='#'>
-        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>About us</li>
-    </a>
+    <Link to='/about'>
+        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>About </li>
+    </Link>
     <a href='#'>
         <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>Sponsor</li>
     </a>
@@ -44,7 +45,7 @@ const Navbar = () => {
     </a>
 </ul>
 
-<div className=' md:flex py-4'>
+<div className=' md:flex hidden py-4'>
     <button className='bg-[#0891b2] md:font-base text-xl rounded-xl  px-3  py-2 text-white 
      hover:shadow-2xl shadow-gray-100 active:bg-blue-900'>
         Candidate Registration
@@ -78,14 +79,22 @@ const Navbar = () => {
                         <li className='px-2  py-4 hover:text-[#0891b2] cursor-pointer '>Visitors pass</li>
 
                     </a>
+                    <a href='#'>
+                        <li className='px-2  py-4 hover:text-[#0891b2] cursor-pointer '>Visitors pass</li>
+
+                    </a>
+                    <a href='#'>
+                        <li className='px-2  py-4 hover:text-[#0891b2] cursor-pointer '>Candidate Registration</li>
+
+                    </a>
                 </ul>
             
-                <div className=' md:flex py-4'>
+                {/* <div className=' md:flex py-4'>
                     <button className='bg-[#0891b2] md:font-base text-xl rounded-xl  px-3  py-2 text-white 
                      hover:shadow-2xl shadow-gray-100 active:bg-blue-900'>
                         Candidate Registration
                     </button>
-                </div>
+                </div> */}
                          </div> 
                 </Drawer>
             
