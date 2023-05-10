@@ -1,8 +1,9 @@
 
 import { Button, Drawer } from 'antd';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-const Navbar = () => {
+import { NavLink } from 'react-router-dom';
+
+const Navbar = (props) => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
@@ -12,50 +13,51 @@ const Navbar = () => {
   };
 
     return (
-        <header className='flex justify-between items-center m-6 md:my-8 '>
+        <header className='flex justify-between items-center px-12 my-6    '>
             <div className='  '>
-                <img src="/logo.png" className='  w-auto sm:h-[5rem] sm:mx-auto'  />
+             <img src="/logo.png" className='w-auto h-[4rem] sm:mx-auto'/>
             </div>      
             
-            <div className=' text-xl flex justify-center'>
+            <div className='flex justify-center'>
 
-<ul className='md:flex hidden md:items-center mx-4 md:font-base   '>
-    <a href='#'> 
-        <li className='px-3 py-4   hover:text-[#0891b2] cursor-pointer '>Home</li>
-    </a>
-    <Link to='/about'>
-        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>About </li>
-    </Link>
-    <a href='#'>
-        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>Sponsor</li>
-    </a>
-    <a href='#'>
-        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>Committee</li>
-    </a>
-    <a href='#'>
-        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>Terms & condition</li>
-    </a>
-    <a href='#'>
-        <li className='px-2 py-4  hover:text-[#0891b2] cursor-pointer'>Hotel details</li>
+<ul className='md:flex hidden md:items-center  font-base text-md  md:text-black text-slate-500  '>
+    <NavLink to ='/' className= ''> 
+        <li className='px-3    hover:text-[#0891b2] cursor-pointer '>Home</li>
+    </NavLink>
+    <NavLink to='/about'>
+        <li className='px-3   hover:text-[#0891b2] cursor-pointer'>About Us </li>
+    </NavLink>
+    <NavLink to ='/sponsor'>
+        <li className='px-3   hover:text-[#0891b2] cursor-pointer'>Sponsor</li>
+    </NavLink>
+    <NavLink to ='Comitee'>
+        <li className='px-3   hover:text-[#0891b2] cursor-pointer'>Committee</li>
+    </NavLink>
+    <NavLink to ='terms'>
+        <li className='px-3   hover:text-[#0891b2] cursor-pointer'>Terms & condition</li>
+    </NavLink>
+    <NavLink to ='hotel'>
+        <li className='px-3   hover:text-[#0891b2] cursor-pointer'>Hotel details</li>
 
-    </a>
-    <a href='#'>
-        <li className='px-2  py-4 hover:text-[#0891b2] cursor-pointer '>Visitors pass</li>
+    </NavLink>
+    <NavLink to ='Visitor'>
+        <li className='px-3  hover:text-[#0891b2] cursor-pointer '>Visitors pass</li>
 
-    </a>
+    </NavLink>
 </ul>
 
-<div className=' md:flex hidden py-4'>
-    <button className='bg-[#0891b2] md:font-base text-xl rounded-xl  px-3  py-2 text-white 
-     hover:shadow-2xl shadow-gray-100 active:bg-blue-900'>
+<div className=' md:flex hidden'>
+<NavLink to= 'Register'> <button className='bg-[#0891b2] md:font-base text-md font-medium rounded-xl  md:px-6 px-4 py-1 md:py-2 text-white hover:shadow-2xl shadow-gray-500 active:bg-blue-900'>
+
         Candidate Registration
     </button>
+    </NavLink>
 </div>
          </div> 
             <Drawer title="" placement="right" onClose={onClose} open={open}>
-              <div className=' text-2xl '>
+              <div className=' text-2xl  text-center '>
 
-                <ul className='md:flex md:items-center mx-4 md:font-base   '>
+                <ul className='  mx-4 md:font-base   '>
                     <a href='#'> 
                         <li className='px-3 py-4   hover:text-[#0891b2] cursor-pointer '>Home</li>
                     </a>
@@ -89,12 +91,7 @@ const Navbar = () => {
                     </a>
                 </ul>
             
-                {/* <div className=' md:flex py-4'>
-                    <button className='bg-[#0891b2] md:font-base text-xl rounded-xl  px-3  py-2 text-white 
-                     hover:shadow-2xl shadow-gray-100 active:bg-blue-900'>
-                        Candidate Registration
-                    </button>
-                </div> */}
+              
                          </div> 
                 </Drawer>
             
